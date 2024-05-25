@@ -1,5 +1,5 @@
 import { Coords } from "@core/types";
-import { OrientedMovement, Orientation, Movement } from "./types";
+import { OrientedMovement, Orientation, Movement, Direction } from "./types";
 import { wrapValue } from "@utils/numbers";
 
 // For every Orientation, maps absolute contributions to the rover's coordinates
@@ -40,4 +40,9 @@ export const move = (
 
   // 3. Wrap to provided dimension
   return { ...coords, [axis]: wrapValue(newValue, dimension) };
+};
+
+export const directionLabels = {
+  [Direction.FORWARD]: "forward",
+  [Direction.BACKWARD]: "backward",
 };

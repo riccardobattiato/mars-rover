@@ -6,3 +6,8 @@ import { Orientation, Rotation } from "./types";
  */
 export const rotate = (orientation: Orientation, rotation: Rotation) =>
   wrapValue(orientation + rotation, 4);
+
+export const rotationLabels = {
+  [Rotation.LEFT]: "left",
+  [Rotation.RIGHT]: "right",
+};
