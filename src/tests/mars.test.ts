@@ -1,6 +1,6 @@
 import { generateMars } from "@core/mars";
 
-describe("generateMars", () => {
+describe(generateMars.name, () => {
   it.each`
     dimension | expected
     ${2}      | ${2}
