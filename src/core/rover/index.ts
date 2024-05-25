@@ -1,21 +1,19 @@
 import { Mars } from "@core/mars/types";
-import { Direction, Movement, Orientation, Rotation, Rover } from "./types";
+import { Direction, Movement, Rotation, Rover } from "./types";
 import { move } from "./movement";
-import { isObstacle } from "@core/mars";
-import { simulateDelay } from "@utils/delays";
+import { getRandomAvailableCell, isObstacle } from "@core/mars";
 import { rotate } from "./rotation";
+import { randomInteger } from "@utils/random";
 
 /**
  * Tries to apply a movement using the given direction
  * Throws if an obstacle is met
  */
-export const requestMovement = async (
+export const requestMovement = (
   rover: Rover,
   direction: Direction,
   mars: Mars
-): Promise<Rover> => {
-  await simulateDelay(); // we're sending commands from the Earth!
-
+): Rover => {
   const { coords, orientation } = rover;
   const movement: Movement = { direction, orientation };
   const destination = move(coords, movement, mars.length);
@@ -26,11 +24,15 @@ export const requestMovement = async (
   return { ...rover, coords: destination };
 };
 
-export const requestRotation = async (
-  orientation: Orientation,
-  rotation: Rotation
-): Promise<Orientation> => {
-  await simulateDelay(); // we're sending commands from the Earth!
-
-  return rotate(orientation, rotation);
+export const requestRotation = (rover: Rover, rotation: Rotation): Rover => {
+  const orientation = rotate(rover.orientation, rotation);
+  return { ...rover, orientation };
 };
+
+/**
+ * Inits the Rover in a random empty cell
+ */
+export const initRover = (mars: Mars): Rover => ({
+  coords: getRandomAvailableCell(mars),
+  orientation: randomInteger(0, 3),
+});
