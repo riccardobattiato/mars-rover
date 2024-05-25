@@ -4,8 +4,13 @@ import { randomBoolean, randomInteger } from "@utils/random";
 
 /**
  * Generates a NxX array where "true" is an obstacle
+ * @param dimension an integer greater than 1
  */
 export const generateMars = (dimension: number): Mars => {
+  if (dimension <= 1) throw new Error("Dimension must be greater than 1");
+  if (!Number.isInteger(dimension))
+    throw new Error("Dimension must be an integer");
+
   const mars: Mars = Array.from({ length: dimension }, () =>
     Array.from({ length: dimension }, () => randomBoolean(0.4))
   );
