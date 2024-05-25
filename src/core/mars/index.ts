@@ -1,14 +1,7 @@
 import { Coords } from "@core/types";
 import { Mars } from "./types";
 import { randomBoolean, randomInteger } from "@utils/random";
-
-const checkValidDimension = (dimension: number) => {
-  if (dimension <= 1) throw new Error("Dimension must be greater than 1");
-  if (!Number.isInteger(dimension))
-    throw new Error("Dimension must be an integer");
-
-  return true;
-};
+import { checkValidDimension } from "@core/validators";
 
 /**
  * Generates a NxX array where "true" is an obstacle
@@ -32,8 +25,13 @@ export const generateMars = (dimension: number): Mars => {
 export const isObstacle = (mars: Mars, coords: Coords): boolean =>
   mars[coords.y][coords.x];
 
+/**
+ * Generates a (x,y) random coordinate
+ * @param dimension an integer greater than 1
+ */
 export const getRandomCoords = (dimension: number): Coords => {
   checkValidDimension(dimension);
+
   return {
     x: randomInteger(0, dimension - 1),
     y: randomInteger(0, dimension - 1),

@@ -1,6 +1,7 @@
 import { Coords } from "@core/types";
 import { OrientedMovement, Orientation, Movement, Direction } from "./types";
 import { wrapValue } from "@utils/numbers";
+import { checkValidCoords, checkValidDimension } from "@core/validators";
 
 // For every Orientation, maps absolute contributions to the rover's coordinates
 const Movements: OrientedMovement = {
@@ -32,6 +33,10 @@ export const move = (
   movement: Movement,
   dimension: number
 ): Coords => {
+  // 0. Validate inputs
+  checkValidDimension(dimension);
+  checkValidCoords(coords, dimension);
+
   // 1. We want to know axis and sign of our movement
   const { axis, value } = Movements[movement.orientation];
 
