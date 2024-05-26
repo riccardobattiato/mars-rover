@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.scss";
+import { generateMars } from "@core/mars";
+import { useMarsRover } from "@hooks/useMarsRover";
+
+const mars = generateMars(5);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { rover, logs, handleMove, handleRotate } = useMarsRover(mars);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container" data-testid="ciao">
+      <div className="mars">
+        {mars.map((row, y) => (
+          <div className="mars__row" key={`row-${y}`}>
+            {row.map((cell, x) => (
+              <div className="mars__cell" key={`cell-${x}`}>
+                {`${x}, ${y}`}
+                {cell && <div className="mars__obstacle">obs</div>}
+                {rover.coords.x === x && rover.coords.y === y && (
+                  <div className="rover">rvr</div>
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="controls">
+        <div className="controls__orientation">
+          Orientation: {rover.orientation}
+        </div>
+        <div className="controls__coords">
+          Coordinates: {rover.coords.x} {rover.coords.y}
+        </div>
+        {logs.map((log, i) => (
+          <div key={`log-${i}`}>{log.message}</div>
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
