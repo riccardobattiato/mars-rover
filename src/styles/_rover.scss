@@ -1,11 +1,12 @@
 .rover {
-  width: 100%;
-  height: 100%;
+  &,
+  &__vector {
+    width: 100%;
+    height: 100%;
+  }
 
   &__vector {
     stroke: var(--foreground);
-
-    height: 80%;
 
     &--right {
       transform: rotate(90deg);
