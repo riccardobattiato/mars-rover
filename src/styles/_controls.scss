@@ -1,0 +1,31 @@
+.controls {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-areas:
+    "up up up"
+    "left down right";
+
+  &__up {
+    grid-area: up;
+    margin: 0 auto;
+    display: flex;
+  }
+  &__right {
+    grid-area: right;
+  }
+  &__down {
+    grid-area: down;
+  }
+  &__left {
+    grid-area: left;
+  }
+}
+
+.arrow-key {
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
