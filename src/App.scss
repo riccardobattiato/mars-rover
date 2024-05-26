@@ -1,0 +1,40 @@
+@use "./styles/mixins" as mixins;
+
+.app {
+  padding: 1.875rem;
+
+  &__title {
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mixins.gt-sm {
+      font-size: 3rem;
+    }
+  }
+
+  &__main {
+    margin-top: 2rem;
+
+    @include mixins.gt-sm {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-areas:
+        "mars mars terminal"
+        "mars mars terminal"
+        "mars mars controls";
+    }
+  }
+
+  &__mars {
+    grid-area: mars;
+  }
+
+  &__terminal {
+    grid-area: terminal;
+  }
+
+  &__controls {
+    grid-area: controls;
+  }
+}
