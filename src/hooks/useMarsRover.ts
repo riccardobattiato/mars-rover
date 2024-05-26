@@ -42,6 +42,7 @@ export const useMarsRover = (mars: Mars) => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      e.preventDefault();
       switch (e.key) {
         case "ArrowLeft":
           handleRotate(Rotation.LEFT);

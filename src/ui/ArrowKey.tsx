@@ -36,11 +36,13 @@ const ArrowKey = ({ type, onClick }: Props) => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      e.preventDefault();
       if (e.key === type) {
         setPressed(true);
       }
     };
     const handleKeyUp = (e: KeyboardEvent) => {
+      e.preventDefault();
       if (e.key === type) {
         setPressed(false);
       }
