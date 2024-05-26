@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="background-color:#FFF" viewBox="7.5 263.5 49 49">
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M42.2, 279.2L45.15, 282.2L42.15, 285.2L39.15, 282.25L42.2, 279.2" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M33.75, 281.4L37.75, 285.4L33.75, 289.4L29.75, 285.4L33.75, 281.4" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M31.2, 275.15L34.15, 272.15L37.2, 275.15L34.2, 278.15L31.2, 275.15" />
+    <path stroke="black" fill="none" stroke-width="1" d="M8, 288L32, 264L56, 288L32, 312L8, 288" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M31.2, 275.15L34.15, 272.15L37.2, 275.15L34.2, 278.15L31.2, 275.15" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M33.75, 281.4L37.75, 285.4L33.75, 289.4L29.75, 285.4L33.75, 281.4" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M8, 288L16, 272L32, 264L8, 288L32, 312L56, 288L32, 264L48, 272L56, 288L48, 304L32, 312L16, 304L8, 288" />
+    <path stroke="black" fill="none" stroke-width="1"
+        d="M42.2, 279.2L45.15, 282.2L42.15, 285.2L39.15, 282.25L42.2, 279.2" />
+</svg>
