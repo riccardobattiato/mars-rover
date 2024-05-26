@@ -1,10 +1,13 @@
 @use "fonts";
 @use "rover";
 @use "obstacle";
+@use "terminal";
 
 :root {
   --background: #202125;
+  --dark: #09090b;
   --foreground: #e5e7eb;
+  --danger: #ea580c;
 }
 
 body {
