@@ -1,11 +1,6 @@
 .rover {
-  &,
   &__vector {
     width: 100%;
-    height: 100%;
-  }
-
-  &__vector {
     stroke: var(--foreground);
 
     &--right {

@@ -1,0 +1,30 @@
+.mars {
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--foreground);
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+
+  &__grid-row {
+    flex: 1;
+    display: flex;
+  }
+
+  &__cell {
+    flex: 1;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__obstacle {
+    width: 50%;
+  }
+
+  &__rover {
+    width: 80%;
+  }
+}
