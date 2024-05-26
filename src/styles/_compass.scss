@@ -1,0 +1,12 @@
+.compass {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+
+  &__vector {
+    width: 3.125rem;
+  }
+  &__label {
+    font-size: 2rem;
+  }
+}

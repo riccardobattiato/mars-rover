@@ -1,8 +1,6 @@
-import type { Rover } from "@core/rover/types";
 import ArrowKey from "./ArrowKey";
 
 type Props = {
-  rover: Rover;
   onPressUp: () => void;
   onPressRight: () => void;
   onPressDown: () => void;
@@ -10,7 +8,6 @@ type Props = {
 };
 
 const Controls = ({
-  rover,
   onPressUp,
   onPressRight,
   onPressDown,
