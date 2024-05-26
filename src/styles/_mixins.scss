@@ -1,7 +1,7 @@
-$sm-width: "640px";
-$md-width: "768px";
-$lg-width: "1024px";
-$xl-width: "1280px";
+$sm-width: 640px;
+$md-width: 768px;
+$lg-width: 1024px;
+$xl-width: 1280px;
 
 @mixin gt-xs() {
   @media screen and (min-width: $sm-width) {
