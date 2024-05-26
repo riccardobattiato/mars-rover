@@ -1,3 +1,5 @@
+@use "../styles/mixins" as mixins;
+
 .controls {
   display: grid;
   justify-content: center;
@@ -24,8 +26,13 @@
 
 .arrow-key {
   &__image {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     object-fit: contain;
+
+    @include mixins.gt-lg {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 }
