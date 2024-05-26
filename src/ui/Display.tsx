@@ -8,7 +8,7 @@ const Display = ({ mars, rover }: Props) => (
   <div className="mars">
     <div className="mars__grid">
       {mars.map((row, y) => (
-        <div className="mars__grid-row">
+        <div className="mars__grid-row" key={`row-${y}`}>
           {row.map((cell, x) => (
             <div
               className="mars__cell"
