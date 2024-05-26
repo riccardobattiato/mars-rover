@@ -1,13 +1,13 @@
 import "./App.scss";
-import { generateMars } from "@core/mars";
 import { Direction, Rotation } from "@core/rover/types";
 import { useMarsRover } from "@hooks/useMarsRover";
 import Controls from "@ui/Controls";
 import Hud from "@ui/Hud";
 import Display from "@ui/Display";
 import Terminal from "@ui/Terminal";
+import { marsMock } from "./mocks/mars";
 
-const mars = generateMars(5);
+const mars = marsMock;
 
 function App() {
   const { rover, logs, handleMove, handleRotate } = useMarsRover(mars);
