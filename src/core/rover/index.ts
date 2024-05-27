@@ -19,7 +19,7 @@ export const requestMovement = (
   const destination = move(coords, movement, mars.length);
 
   if (isObstacle(mars, destination))
-    throw new Error(`Cannote move to ${destination.x}, ${destination.y}`);
+    throw new Error(`Cannot move to ${destination.x}, ${destination.y}`);
 
   return { ...rover, coords: destination };
 };
