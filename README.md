@@ -6,7 +6,9 @@
 
 A simple Mars exploration app made with TypeScript, React and Sass.
 
-Assets from Vecteezy https://www.vecteezy.com/
+Assets from:
+- Vecteezy https://www.vecteezy.com/
+- Kenney https://www.kenney.nl/assets/simple-space
 
 Icon from SVG Repo https://www.svgrepo.com/svg/4062/mars
 
