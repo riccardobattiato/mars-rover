@@ -7,6 +7,28 @@
   @include mixins.gt-sm {
     height: 100%;
     overflow: auto;
+
+    --sb-track-color: #232e33;
+    --sb-thumb-color: #ea580c;
+    --sb-size: 0.625rem;
+
+    &::-webkit-scrollbar {
+      width: var(--sb-size);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+      & {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+    }
   }
 
   &__log {
