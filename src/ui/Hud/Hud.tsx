@@ -1,6 +1,6 @@
 import { Rover } from "@core/rover/types";
-import Compass from "./Compass";
-import Location from "./Location";
+import Compass from "@ui/Compass";
+import Location from "@ui/Location";
 
 type Props = Rover;
 

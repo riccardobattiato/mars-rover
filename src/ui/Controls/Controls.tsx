@@ -1,4 +1,4 @@
-import ArrowKey from "./ArrowKey";
+import ArrowKey from "@ui/ArrowKey";
 
 type Props = {
   onPressUp: () => void;

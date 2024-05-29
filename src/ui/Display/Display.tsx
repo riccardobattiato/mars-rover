@@ -1,8 +1,9 @@
 import { Mars as TMars } from "@core/mars/types";
-import Obstacle from "./Obstacle";
-import Rover from "./Rover";
+import Obstacle from "@ui/Obstacle";
+import Rover from "@ui/Rover";
+import type { Rover as TRover } from "@core/rover/types";
 
-type Props = { mars: TMars; rover: Rover };
+type Props = { mars: TMars; rover: TRover };
 
 const Display = ({ mars, rover }: Props) => (
   <div className="mars">

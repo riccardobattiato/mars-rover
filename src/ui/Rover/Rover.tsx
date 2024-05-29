@@ -1,7 +1,7 @@
-import { Orientation, type Rover } from "@core/rover/types";
+import { Orientation, type Rover as TRover } from "@core/rover/types";
 import { clsx } from "clsx";
 
-type Props = Rover;
+type Props = TRover;
 
 const Rover = ({ orientation }: Props) => {
   return (
